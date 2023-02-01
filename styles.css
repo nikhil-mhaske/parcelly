@@ -16,7 +16,7 @@ body {
 
 /*Tool Page*/
 .parcelly-tool {
-    width: 70%;
+    width: 80%;
     margin: auto;
     padding: 2rem 2rem;
     border-radius: 2rem;
@@ -27,14 +27,14 @@ body {
     justify-content: center;
 }
 
-.parcelly-tool h1{
+h1{
     font-size: 3.2rem;
     font-weight: 600;
     color: #3e0364;
     margin-bottom: 3rem;
 }
 
-.parcelly-tool p{
+p{
     font-size: 1.9rem;
     color: #020202;
     margin-bottom: 2.5rem;
@@ -74,13 +74,13 @@ button {
     font-size: 1.7rem;
 }
 
-.details {
+.grid-two-column {
     display: grid;
     grid-template-columns: 50% 50%;
     text-align: center;
 }
 
-.details span, .couriers span {
+span {
     font-size: 4rem;
     font-weight: 700;
 }
@@ -89,7 +89,7 @@ hr {
     margin: 2rem auto;
 }
 
-.couriers {
+.grid-three-column {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
@@ -107,4 +107,20 @@ img {
     border: 1px solid #f7f1ff;
     border-radius: 2rem;
     box-shadow: 0 0 2px #aaffba;
+}
+
+@media screen and (max-width: 992px){
+    html{
+        text-align: center;
+    }
+    form {
+        width: 100%;
+    }
+    input ,button{
+        width: 70%;
+    }
+    .grid-three-column, .grid-two-column{
+        grid-template-columns: 1fr;
+    }
+   
 }

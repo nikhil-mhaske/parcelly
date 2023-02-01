@@ -19,21 +19,21 @@
         <form onsubmit="return false">
             <input type="text" name="ship-from" placeholder="Ship From (Origin ZIP)" id="ship-from">
             <input type="text" name="ship-to" placeholder="Ship To (Destination ZIP)" id="ship-to">
-            <input type="number" name="weight" placeholder="Weight (in grams)" id="weight"><br>
-            <button type="submit" id="submit">Calculate Shipping Cost</button>
+            <input type="number" name="weight" placeholder="Weight (in grams)" id="weight" required><br>
+            <button disabled type="submit" id="submit">Calculate Shipping Cost</button>
         </form>
 
         <div id="output">
 
-            <div class="details">
+            <div class="grid-two-column">
                 <div id="parcelWeight"></div>
                 <div id="shippingDistance"></div>
             </div>
             <div id="affordable">
-                
+
             </div>
             <div id="hr"></div>
-            <div class="couriers">
+            <div class="grid-three-column">
                 <div id="service">
                     <div id="speedPost"></div>
                 </div>

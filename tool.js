@@ -6,10 +6,20 @@ let shipTo = document.getElementById("ship-to");
 
 let charges;
 
+//validations
+weight.addEventListener("keyup", (res) => {
+    const value=res.currentTarget.value;
+    if(value === "" || value <= "0") {
+        submitBtn.disabled = true;
+    }else {
+        submitBtn.disabled = false;
+    }
+})
+
 submitBtn.addEventListener("click", () => {
 
     //Rapid API Platform : India Pincode API 
-    const encodedParams = new URLSearchParams();
+    /*const encodedParams = new URLSearchParams();
     encodedParams.append("pincode1", shipFrom.value);
     encodedParams.append("pincode2", shipTo.value);
     encodedParams.append("unit", "km");
@@ -32,6 +42,12 @@ submitBtn.addEventListener("click", () => {
         })
         .catch(err => console.error(err));
 
+*/        
+    //Test when api not working
+    
+    document.getElementById("shippingDistance").innerHTML = `Shipping Distance:<br> <span>121 Km</span>`;
+            shippingRates(121, weight.value);
+    
 
     document.getElementById("parcelWeight").innerHTML = `Weight <br><span>${weight.value} gm</span>`;
     document.getElementById("hr").innerHTML = `<hr>`;
@@ -44,21 +60,21 @@ function shippingRates(distance, weight) {
 
     document.getElementById("speedPost").innerHTML = `
     <img src="/images/indianPost.jpg" alt="Indian post Logo"><br>
-    Shipping Cost Rs.<br> <span>${indianPostCharges} &#8377; <span>`;
+    Shipping Cost<br> <span>${indianPostCharges} &#8377; <span>`;
 
     //For FedEx
     let fedExCharges = fedEx(distance, weight);
 
     document.getElementById("fedex").innerHTML = `
     <img src="/images/Fedex.png" alt="FedEx Logo"><br>
-    Shipping Cost Rs.<br> <span>${fedExCharges} &#8377; <span>`;
+    Shipping Cost<br> <span>${fedExCharges} &#8377; <span>`;
 
     //For DTDC
     let dtdcCharges = dtdc(distance, weight);
 
     document.getElementById("dtdc").innerHTML = `
     <img src="/images/dtdc.png" alt="DTDC Logo"><br>
-    Shipping Cost Rs.<br> <span>${dtdcCharges}  &#8377; <span>`;
+    Shipping Cost<br> <span>${dtdcCharges}  &#8377; <span>`;
 
 
     //For highlighting the affordable and cheapest one
