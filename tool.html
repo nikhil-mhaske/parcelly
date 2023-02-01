@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Charges Compare</title>
+
+
+</head>
+
+<body>
+
+
+    <form onsubmit="return false">
+        <input type="text" name="ship-from" placeholder="Ship From (Origin ZIP)" id="ship-from"><br>
+        <input type="text" name="ship-to" placeholder="Ship To (Destination ZIP)" id="ship-to"><br>
+        <input type="number" name="weight" placeholder="Weight (in grams)" id="weight"><br>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <div id="output">
+        <div id="parcelWeight">
+
+        </div>
+        <div id="shippingDistance"></div>
+
+        <div class="container-couriers">
+            <div id="speedPost">
+                
+            </div>
+            <div id="dtdc">
+
+            </div>
+            <div id="fedex">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="tool.js"></script>
+</body>
+
+</html>
