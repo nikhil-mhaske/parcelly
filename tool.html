@@ -5,39 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shipping Charges Compare</title>
+    <title>Parcelly Tool</title>
 
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+    <section class="parcelly-tool">
+        <h1>Shipping Rate Calculator</h1>
+        <p>Get Shipping Cost from Different Shipping Service Providers at One Place</p>
 
-    <form onsubmit="return false">
-        <input type="text" name="ship-from" placeholder="Ship From (Origin ZIP)" id="ship-from"><br>
-        <input type="text" name="ship-to" placeholder="Ship To (Destination ZIP)" id="ship-to"><br>
-        <input type="number" name="weight" placeholder="Weight (in grams)" id="weight"><br>
-        <button type="submit" id="submit">Submit</button>
-    </form>
+        <form onsubmit="return false">
+            <input type="text" name="ship-from" placeholder="Ship From (Origin ZIP)" id="ship-from">
+            <input type="text" name="ship-to" placeholder="Ship To (Destination ZIP)" id="ship-to">
+            <input type="number" name="weight" placeholder="Weight (in grams)" id="weight"><br>
+            <button type="submit" id="submit">Calculate Shipping Cost</button>
+        </form>
 
-    <div id="output">
-        <div id="parcelWeight">
+        <div id="output">
 
-        </div>
-        <div id="shippingDistance"></div>
-
-        <div class="container-couriers">
-            <div id="speedPost">
+            <div class="details">
+                <div id="parcelWeight"></div>
+                <div id="shippingDistance"></div>
+            </div>
+            <div id="affordable">
                 
             </div>
-            <div id="dtdc">
-
-            </div>
-            <div id="fedex">
-
+            <div id="hr"></div>
+            <div class="couriers">
+                <div id="service">
+                    <div id="speedPost"></div>
+                </div>
+                <div id="service">
+                    <div id="fedex"></div>
+                </div>
+                <div id="service">
+                    <div id="dtdc"></div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
 
     <script src="tool.js"></script>
 </body>

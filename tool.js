@@ -4,10 +4,11 @@ let weight = document.getElementById("weight");
 let shipFrom = document.getElementById("ship-from");
 let shipTo = document.getElementById("ship-to");
 
+let charges;
 
 submitBtn.addEventListener("click", () => {
 
-    /*
+    //Rapid API Platform : India Pincode API 
     const encodedParams = new URLSearchParams();
     encodedParams.append("pincode1", shipFrom.value);
     encodedParams.append("pincode2", shipTo.value);
@@ -26,28 +27,46 @@ submitBtn.addEventListener("click", () => {
     fetch('https://india-pincode-with-latitude-and-longitude.p.rapidapi.com/api/v1/pincode/distance', options)
         .then(response => response.json())
         .then(response => {
-            document.getElementById("shippingDistance").innerHTML = `Shipping Distance: ${response.distance} Km`;
+            document.getElementById("shippingDistance").innerHTML = `Shipping Distance:<br> <span>${response.distance} Km</span>`;
             shippingRates(response.distance, weight.value);
         })
         .catch(err => console.error(err));
 
-        */
-    shippingRates(121, weight.value);
-    document.getElementById("parcelWeight").innerHTML = `Weight: ${weight.value} grams`;
+
+    document.getElementById("parcelWeight").innerHTML = `Weight <br><span>${weight.value} gm</span>`;
+    document.getElementById("hr").innerHTML = `<hr>`;
 })
 
 function shippingRates(distance, weight) {
 
     //for Speed Post
-    indianPost(distance, weight);
+    let indianPostCharges = indianPost(distance, weight);
+
+    document.getElementById("speedPost").innerHTML = `
+    <img src="/images/indianPost.jpg" alt="Indian post Logo"><br>
+    Shipping Cost Rs.<br> <span>${indianPostCharges} &#8377; <span>`;
+
     //For FedEx
-    fedEx(distance, weight);
+    let fedExCharges = fedEx(distance, weight);
+
+    document.getElementById("fedex").innerHTML = `
+    <img src="/images/Fedex.png" alt="FedEx Logo"><br>
+    Shipping Cost Rs.<br> <span>${fedExCharges} &#8377; <span>`;
+
     //For DTDC
-    dtdc(distance, weight);
+    let dtdcCharges = dtdc(distance, weight);
+
+    document.getElementById("dtdc").innerHTML = `
+    <img src="/images/dtdc.png" alt="DTDC Logo"><br>
+    Shipping Cost Rs.<br> <span>${dtdcCharges}  &#8377; <span>`;
+
+
+    //For highlighting the affordable and cheapest one
+    affordableService(indianPostCharges, fedExCharges, dtdcCharges);
 }
 
 function indianPost(distance, weight) {
-    let charges;
+    charges=0;
     if (weight <= 50) {
         if (distance <= 50) {
             charges = 15;
@@ -113,12 +132,11 @@ function indianPost(distance, weight) {
         }
 
     }
-
-    document.getElementById("speedPost").innerHTML = `Indian post Charges: Rs. ${charges}`;
+    return charges;
 }
 
 function fedEx(distance, weight) {
-    let charges;
+    charges=0;
     if (weight <= 50) {
         if (distance <= 50) {
             charges = 32;
@@ -182,15 +200,14 @@ function fedEx(distance, weight) {
             charges = 100 + 55 * addWeight;
 
         }
-
     }
-    document.getElementById("fedex").innerHTML = `FedEx Charges: Rs. ${charges}`;
+    return charges;
 }
 
 
 
 function dtdc(distance, weight) {
-    let charges;
+    charges=0;
     if (weight <= 50) {
         if (distance <= 50) {
             charges = 50;
@@ -254,8 +271,19 @@ function dtdc(distance, weight) {
             charges = 130 + 55 * addWeight;
 
         }
-
     }
-    document.getElementById("dtdc").innerHTML = `DTDC Charges: Rs. ${charges}`;
+    return charges;
 }
 
+function affordableService(indianPostCharges, fedExCharges, dtdcCharges) {
+
+    if(indianPostCharges<fedExCharges && indianPostCharges<dtdcCharges) {
+        document.querySelector("#speedPost").style.cssText = "border-radius: 2rem; background: #aaffba;";
+    }
+    else if (fedExCharges<indianPostCharges && fedExCharges<dtdcCharges) {
+        document.querySelector("#fedex").style.cssText = "border-radius: 2rem; background: #aaffba;";
+    }
+    else {
+        document.querySelector("#dtdc").style.cssText = "border-radius: 2rem; background: #aaffba;";
+    }
+}
