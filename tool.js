@@ -8,10 +8,10 @@ let charges;
 
 //validations
 weight.addEventListener("keyup", (res) => {
-    const value=res.currentTarget.value;
-    if(value === "" || value <= "0") {
+    const value = res.currentTarget.value;
+    if (value === "" || value <= "0") {
         submitBtn.disabled = true;
-    }else {
+    } else {
         submitBtn.disabled = false;
     }
 })
@@ -19,7 +19,7 @@ weight.addEventListener("keyup", (res) => {
 submitBtn.addEventListener("click", () => {
 
     //Rapid API Platform : India Pincode API 
-    /*const encodedParams = new URLSearchParams();
+    const encodedParams = new URLSearchParams();
     encodedParams.append("pincode1", shipFrom.value);
     encodedParams.append("pincode2", shipTo.value);
     encodedParams.append("unit", "km");
@@ -42,12 +42,13 @@ submitBtn.addEventListener("click", () => {
         })
         .catch(err => console.error(err));
 
-*/        
     //Test when api not working
     
+    /*
     document.getElementById("shippingDistance").innerHTML = `Shipping Distance:<br> <span>121 Km</span>`;
-            shippingRates(121, weight.value);
-    
+    shippingRates(121, weight.value);
+    */
+
 
     document.getElementById("parcelWeight").innerHTML = `Weight <br><span>${weight.value} gm</span>`;
     document.getElementById("hr").innerHTML = `<hr>`;
@@ -82,7 +83,7 @@ function shippingRates(distance, weight) {
 }
 
 function indianPost(distance, weight) {
-    charges=0;
+    charges = 0;
     if (weight <= 50) {
         if (distance <= 50) {
             charges = 15;
@@ -152,7 +153,7 @@ function indianPost(distance, weight) {
 }
 
 function fedEx(distance, weight) {
-    charges=0;
+    charges = 0;
     if (weight <= 50) {
         if (distance <= 50) {
             charges = 32;
@@ -223,7 +224,7 @@ function fedEx(distance, weight) {
 
 
 function dtdc(distance, weight) {
-    charges=0;
+    charges = 0;
     if (weight <= 50) {
         if (distance <= 50) {
             charges = 50;
@@ -293,10 +294,10 @@ function dtdc(distance, weight) {
 
 function affordableService(indianPostCharges, fedExCharges, dtdcCharges) {
 
-    if(indianPostCharges<fedExCharges && indianPostCharges<dtdcCharges) {
+    if (indianPostCharges < fedExCharges && indianPostCharges < dtdcCharges) {
         document.querySelector("#speedPost").style.cssText = "border-radius: 2rem; background: #aaffba;";
     }
-    else if (fedExCharges<indianPostCharges && fedExCharges<dtdcCharges) {
+    else if (fedExCharges < indianPostCharges && fedExCharges < dtdcCharges) {
         document.querySelector("#fedex").style.cssText = "border-radius: 2rem; background: #aaffba;";
     }
     else {
