@@ -7,10 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parcelly Tool</title>
 
+    <!--Link to CSS-->
     <link rel="stylesheet" href="styles.css">
+    <!--Link to Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+
+    <header>
+        <div class="logo">
+            <img src="/images/2.png" alt="logo" width="120px">
+        </div>
+        <div class="nav-items">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tool.html">Calculate Shipping</a></li>
+                <li><a href="index.html#howto">How To</a></li>
+                <li><a href="index.html/#about">About</a></li>
+                <li><a href="index.html/#partners">Our Partners</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="menu-icon"><i class="fa fa-bars"></i></div>
+        <div class="cancel-icon"><i class="fa fa-close"></i></div>
+    </header>
 
     <section class="parcelly-tool">
         <h1>Shipping Rate Calculator</h1>
@@ -47,7 +68,7 @@
         </div>
     </section>
 
-    <section class="working">
+    <section class="working" id="working">
         <h1>How Calculator Works?</h1>
         <div class="grid-three-column">
             <div class="step">
@@ -66,8 +87,43 @@
         <p id="tc">*Highlighted Shipping partner provides affordable Service...</p>
     </section>
 
+    <footer id="footer">
+        <div class="grid-four-column">
+            <div class="footer-logo">
+                <img src="/images/1.png" alt="Footer Logo">
+            </div>
+            <div class="menu">
+                <p id="title">Quick Links</p>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tool.html">Calculate Shipping</a></li>
+                    <li><a href="index.html#howto">How To</a></li>
+                    <li><a href="index.html/#about">About</a></li>
+                    <li><a href="index.html/#partners">Our Partners</a></li>
+                </ul>
+            </div>
+            <div class="connect">
+                <p id="title">Connect with Us:</p>
+                <p>Phone No: <br>+91 8888888888</p>
+                <p>Email: <br>parcelly@gmail.com</p>
+            </div>
+            <div class="google">
+                <p id="title">Locate Us: </p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.383204960632!2d73.79355401502616!3d18.556754687387894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2beb590275f1b%3A0x7b9c7e88eff80325!2sWisdmLabs!5e0!3m2!1sen!2sin!4v1675326758400!5m2!1sen!2sin"
+                    width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
 
+    </footer>
+    <div class="copyright">
+        <p>&#169; Parcelly 2023 | Created at WisdmLabs</p>
+    </div>
+
+    <script src="main.js"></script>
     <script src="tool.js"></script>
+
 </body>
 
 </html>

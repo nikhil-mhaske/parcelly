@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parcelly</title>
 
+    <!--Link to CSS-->
     <link rel="stylesheet" href="styles.css">
-
+    <!--Link to Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 
 <body>
@@ -19,11 +22,12 @@
         </div>
         <div class="nav-items">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Calculate Shipping</a></li>
-                <li><a href="#">How To</a></li>
-                <li><a href="#">Our Partners</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tool.html">Calculate Shipping</a></li>
+                <li><a href="#howto">How To</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#partners">Our Partners</a></li>
+                <li><a href="#footer">Contact Us</a></li>
             </ul>
         </div>
         <div class="menu-icon"><i class="fa fa-bars"></i></div>
@@ -35,7 +39,7 @@
             <div class="hero-content">
                 <h1>GET YOUR BEST & AFFORDABLE<br> SHIIPING PARTNER</h1>
                 <h3>Compare shipping charges on multiple trusted Platforms</h3>
-                <button>Calculate Shipping</button>
+                <a href="tool.html"><button>Calculate Shipping</button></a>
             </div>
             <div class="hero-image">
                 <img src="/images/hero-image.png" alt="courier service image">
@@ -43,7 +47,7 @@
         </div>
     </section>
 
-    <section class="howto">
+    <section class="howto" id="howto">
         <div class="grid-one-two">
             <div class="tool-image">
                 <img src="/images/Parcelly-Tool.png" alt="tool view">
@@ -100,7 +104,7 @@
         </div>
     </section>
 
-    <section class="about container grid-one-two">
+    <section class="about container grid-one-two" id="about">
 
         <div class="about-image">
             <img src="/images/about.png" alt="About Us">
@@ -125,7 +129,7 @@
         </div>
     </section>
 
-    <section class="partners">
+    <section class="partners" id="partners">
         <div class="container">
             <h1>Our Courier Partners</h1>
 
@@ -152,7 +156,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="footer">
         <div class="grid-four-column">
             <div class="footer-logo">
                 <img src="/images/1.png" alt="Footer Logo">
@@ -161,10 +165,10 @@
                 <p id="title">Quick Links</p>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Calculate Shipping</a></li>
-                    <li><a href="#">How To</a></li>
-                    <li><a href="#">Our Partners</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="tool.html">Calculate Shipping</a></li>
+                    <li><a href="#howto">How To</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#partners">Our Partners</a></li>
                 </ul>
             </div>
             <div class="connect">
@@ -180,7 +184,11 @@
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
+
     </footer>
+    <div class="copyright">
+        <p>&#169; Parcelly 2023 | Created at WisdmLabs</p>
+    </div>
     <script src="main.js"></script>
 </body>
 

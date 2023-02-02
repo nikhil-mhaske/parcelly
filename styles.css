@@ -60,6 +60,7 @@ button {
     color: #ffffff;
     font-size: 1.7rem;
     font-weight: 600;
+    cursor: pointer;
 }
 
 /*Header*/
@@ -92,7 +93,7 @@ a {
 
 a:hover,
 a:active {
-    color: #f7f1ff;
+    color: #6f57e9;
 }
 
 .menu-icon,
@@ -281,39 +282,55 @@ footer {
     background-color: #3e0364;
     padding: 3rem 5rem 2rem 5rem;
 }
-footer div{
+
+footer div {
     margin: auto;
     padding-bottom: 1rem;
 }
+
 .grid-four-column {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.footer-logo img{
+.footer-logo img {
     width: 100%;
 }
 
-footer ul{
+footer ul {
     display: inline-block;
     text-align: center;
 }
-footer li{
+
+footer li {
     line-height: 2rem;
     margin-bottom: 1rem;
 }
 
-footer p{
+footer p {
     font-size: 1.8rem;
     font-weight: 600;
     color: #f7f1ff;
 }
 
-#title{
+#title {
     color: #aaffba;
 }
 
-.menu #title{
+.menu #title {
+    text-align: center;
+}
+
+/*Copyright*/
+.copyright {
+    background-color: #ffffff;
+}
+
+.copyright p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #3e0364;
+    padding: 2rem 0 0 0;
     text-align: center;
 }
 

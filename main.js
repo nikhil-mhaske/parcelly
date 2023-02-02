@@ -12,3 +12,9 @@ const menuBtn = document.querySelector(".menu-icon");
             menuBtn.classList.remove("hide");
             cancelBtn.classList.remove("show");
         }
+
+        items.onclick = () => {
+            items.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+        }
